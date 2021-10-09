@@ -62,14 +62,16 @@
         return response.json() // แปลงข้อมูลที่ได้เป็น json
       })
       .then(function (data) {
+        console.log(data);
         result = data
-        let cout = index + 50
+
+        let cout = index + 1000
         let windSpeed = []
         let timeStemp = []
         for (index; index < cout; index++) {
           if (index === result.length) { break; }
           windSpeed.push(result[index].windSpeed);
-          timeStemp.push(result[index].timeStemp.$date);
+          timeStemp.push(result[index].timeStemp);
         }
         var options = {
           chart: {
@@ -91,13 +93,13 @@
 
   function nextdata() {
 
-    let cout = index + 50
+    let cout = index + 1000
     let windSpeed = []
     let timeStemp = []
     for (index; index < cout; index++) {
       if (index === result.length) { break; }
       windSpeed.push(result[index].windSpeed);
-      timeStemp.push(result[index].timeStemp.$date);
+      timeStemp.push(result[index].timeStemp);
     }
     var options = {
       chart: {
@@ -117,13 +119,13 @@
 
 
   function backdata() {
-    let cout = index - 50
+    let cout = index - 1000
     let windSpeed = []
     let timeStemp = []
     for (index; index > cout; index--) {
       if (index === 0) { break; }
       windSpeed.push(result[index].windSpeed);
-      timeStemp.push(result[index].timeStemp.$date);
+      timeStemp.push(result[index].timeStemp);
     }
     var options = {
       chart: {
