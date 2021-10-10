@@ -51,6 +51,7 @@
 
 <script>
   let index = 0;
+  let d  = 7208;
   let result = [];
   getdata()
 
@@ -69,9 +70,9 @@
         let windSpeed = []
         let timeStemp = []
         for (index; index < cout; index++) {
-          if (index === result.length) { break; }
-          windSpeed.push(result[index].windSpeed);
-          timeStemp.push(result[index].timeStemp);
+          if (index*d >= result.length) { break; }
+          windSpeed.push(result[index*d].windSpeed);
+          timeStemp.push(result[index*d].timeStemp);
         }
         var options = {
           chart: {
